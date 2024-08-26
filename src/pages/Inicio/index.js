@@ -1,5 +1,12 @@
+import Cabecalho from "componentes/cabecalho";
+import Styles from "./Inicio.module.css";
+import Rodape from "componentes/rodape";
+
 export default function Inicio() {
     return (
-        <h1>Olá Mundo, minha primeira página</h1>
+        <>
+            <Cabecalho />
+            <Rodape />
+        </>
     );
 };
