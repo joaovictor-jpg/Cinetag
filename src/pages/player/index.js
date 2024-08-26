@@ -3,6 +3,7 @@ import styles from './Player.module.css';
 import Titulo from 'componentes/titulo';
 import videos from '../../json/db.json';
 import { useParams } from 'react-router-dom';
+import NaoEncontrado from 'pages/naoEncontrado';
 
 export default function Player() {
 
@@ -10,6 +11,10 @@ export default function Player() {
     const video = videos.find(video => {
         return video.id === Number(parametros.id);
     });
+
+    if(!video) {
+        return <NaoEncontrado />
+    }
 
 
 
