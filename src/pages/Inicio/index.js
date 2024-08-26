@@ -2,9 +2,12 @@ import Banner from "componentes/banner";
 import Titulo from "componentes/titulo";
 import Card from "componentes/card";
 import styles from "./Inicio.module.css";
-import videos from "../../json/db.json";
+import { useFavoritosContext } from "hooks/useFavoritosContext";
 
 export default function Inicio() {
+
+    const {videos} = useFavoritosContext();
+
     return (
         <>
             <Banner imagem="home" />

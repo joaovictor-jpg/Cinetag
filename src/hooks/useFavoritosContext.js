@@ -1,8 +1,8 @@
 import { FavoritosContext } from "context/FavoritosContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 export function useFavoritosContext() {
-    const { favoritos, setFavoritos } = useContext(FavoritosContext);
+    const { favoritos, setFavoritos, videos, setVideos } = useContext(FavoritosContext);
 
     function adicionarFavorito(novoFavorito) {
         const favoritoRepetido = favoritos.some(item => item.id === novoFavorito.id);
@@ -18,9 +18,18 @@ export function useFavoritosContext() {
         return setFavoritos(novaLista);
     }
 
+    useEffect(() => {
+        fetch('https://my-json-server.typicode.com/joaovictor-jpg/cinetag-api/videos')
+            .then(resp => resp.json())
+            .then(dados => {
+                setVideos(dados)
+            })
+    }, [])
+
     return {
         favoritos,
-        adicionarFavorito
+        adicionarFavorito,
+        videos
     }
 
 }
