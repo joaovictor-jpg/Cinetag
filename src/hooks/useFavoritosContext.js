@@ -2,7 +2,7 @@ import { FavoritosContext } from "context/FavoritosContext";
 import { useContext } from "react";
 
 export function useFavoritosContext() {
-    const [favoritos, setFavoritos] = useContext(FavoritosContext);
+    const { favoritos, setFavoritos } = useContext(FavoritosContext);
 
     function adicionarFavorito(novoFavorito) {
         const favoritoRepetido = favoritos.some(item => item.id === novoFavorito.id);
