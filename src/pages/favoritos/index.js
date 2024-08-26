@@ -1,15 +1,15 @@
 import Banner from "componentes/banner";
+import styles from "./Favoritos.module.css"
 import Titulo from "componentes/titulo";
+import videos from "../../json/db.json"
 import Card from "componentes/card";
-import styles from "./Inicio.module.css";
-import videos from "../../json/db.json";
 
-export default function Inicio() {
+export default function Favoritos() {
     return (
         <>
-            <Banner imagem="home" />
+            <Banner imagem="favoritos" />
             <Titulo>
-                <h1>Um lugar para guardar seus vídeos e filmes!</h1>
+                <h1>Meus Favoritos</h1>
             </Titulo>
             <section className={styles.container}>
                 {videos.map((video) => {
